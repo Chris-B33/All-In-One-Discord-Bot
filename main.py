@@ -1,22 +1,40 @@
 import discord
+import logging
+from discord.ext import commands
+from lib.music import Music
+from lib.basic import Basic
 
-# Draw Art
-with open("art.txt", "r") as art:
-    print(art.read())
 
+class MyBot(commands.Bot):
 
-class MyClient(discord.Client):
-
-    @staticmethod
-    async def on_ready():
+    async def on_ready(self):
         print("Connected!")
+        await bot.change_presence(activity=discord.Activity(
+            type=discord.ActivityType.watching,
+            name='you...'))
 
-    @staticmethod
-    async def on_message(ctx):
-        await ctx.send("Found message!")
+    async def on_message(self, message):
+        if message.author == bot.user:
+            return
+
+        await bot.process_commands(message)
+
+    async def on_member_join(self, member):
+        await member.send("Welcome!")
 
 
 if __name__ == "__main__":
-    client = MyClient()
+    logger = logging.getLogger('discord')
+    logger.setLevel(logging.DEBUG)
+    handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
+    handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
+    logger.addHandler(handler)
+
+    with open("art.txt", "r") as art:
+        print(art.read())
+
+    bot = MyBot(command_prefix="a!")
+    bot.add_cog(Basic())
+    bot.add_cog(Music(bot))
     token = open("token.txt", "r").read()
-    client.run(token)
+    bot.run(token)
