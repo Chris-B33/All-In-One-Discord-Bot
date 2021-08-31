@@ -1,0 +1,96 @@
+{
+  "presets": [
+    {
+      "categories": [
+        {
+          "name": "Text Channels",
+          "channels": [
+            ["announcements", "t"],
+            ["general", "t"],
+            ["bots", "t"]
+          ]
+        },
+
+        {
+          "name": "Voice Channels",
+          "channels": [
+            ["General", "v"],
+            ["AFK", "v"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "categories": [
+        {
+          "name": "Notice Board",
+          "channels": [
+            ["welcome", "t"],
+            ["announcements", "t"],
+            ["rules", "t"]
+          ]
+        },
+
+        {
+          "name": "Text Channels",
+          "channels": [
+            ["general", "t"],
+            ["nsfw", "t"],
+            ["memes", "t"],
+            ["bots", "t"]
+          ]
+        },
+
+        {
+          "name": "Voice Channels",
+          "channels": [
+            ["General", "v"],
+            ["Mobile", "v"],
+            ["Private", "v"],
+            ["AFK", "v"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "categories": [
+        {
+          "name": "Notice Board",
+          "channels": [
+            ["welcome", "t"],
+            ["announcements", "t"],
+            ["rules", "t"]
+          ]
+        },
+        {
+          "name": "Text Channels",
+          "channels": [
+            ["general", "t"],
+            ["nsfw", "t"],
+            ["memes", "t"],
+            ["videos", "t"],
+            ["bots", "t"]
+          ]
+        },
+        {
+          "name": "Voice Channels",
+          "channels": [
+            ["General", "v"],
+            ["Mobile", "v"],
+            ["Private", "v"],
+            ["AFK", "v"]
+          ]
+        },
+        {
+          "name": "Admin Channels",
+          "channels": [
+            ["Discussions", "t"],
+            ["Admin Only", "v"]
+          ]
+        }
+      ]
+    }
+  ]
+}

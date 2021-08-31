@@ -1,0 +1,26 @@
+{
+  "admin": {
+    "name": "Admins",
+    "colour": "0xff80ff",
+    "perms": 8,
+    "hoist": "True",
+    "mentionable": "True",
+    "reason": "Admin Role"
+  },
+  "default": {
+    "name": "Newcomers",
+    "colour": "0x80ffff",
+    "perms": 0,
+    "hoist": "True",
+    "mentionable": "True",
+    "reason": "Default Role"
+  },
+  "bots": {
+    "name": "Bots",
+    "colour": "0xffff80",
+    "perms": 0,
+    "hoist": "True",
+    "mentionable": "True",
+    "reason": "Bots Role"
+  }
+}
