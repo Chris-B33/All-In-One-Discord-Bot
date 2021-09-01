@@ -1,9 +1,9 @@
 import discord
 import logging
 from discord.ext import commands
-from lib.music import Music
 from lib.basic import Basic
 from lib.server import Server
+from lib.sound import Music, TTS
 
 
 class MyBot(commands.Bot):
@@ -36,6 +36,7 @@ if __name__ == "__main__":
     bot = MyBot(command_prefix="a!")
     bot.add_cog(Basic())
     bot.add_cog(Music(bot))
+    bot.add_cog(TTS(bot))
     bot.add_cog(Server(bot))
     token = open("token.txt", "r").read()
     bot.run(token)
