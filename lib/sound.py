@@ -1,4 +1,5 @@
 import discord
+import pyttsx3
 from discord.ext import commands
 from youtube_dl import YoutubeDL
 
@@ -139,3 +140,24 @@ class Music(commands.Cog):
             await ctx.voice_client.disconnect()
         else:
             await ctx.send("I'm not connected to anything?")
+
+
+class TTS(commands.Cog):
+
+    def __init__(self, b):
+        self.bot = b
+
+        self.engine = pyttsx3.init()
+        self.engine.setProperty('volume', 1.0)
+        self.engine.setProperty('voice', self.engine.getProperty("voices")[0].id)
+
+    @commands.command(
+        name="tts",
+        help="Reads arguments aloud in author's voice channel"
+    )
+    async def tts(self, ctx, *args):
+        await ctx.message.delete()
+        await Music.join_channel(self.bot, ctx)
+        self.engine.say(" ".join(args))
+        self.engine.runAndWait()
+        self.engine.stop()

@@ -4,5 +4,9 @@ This bot was created with the intention to take many helpful functions from othe
 ### Dependencies
 Discord.py with Voice Support =>
 pip install -U discord.py[voice]
+
 YoutubeDL for finding songs =>
-pip install -U youtube_dl
+pip install youtube_dl
+
+pyttsx3 for TTS functions =>
+pip install pyttsx3
