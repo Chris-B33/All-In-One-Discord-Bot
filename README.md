@@ -1,5 +1,6 @@
 # My Discord Bot
 This bot was created with the intention to take many helpful functions from other Discord Bots and wrap them all into one Bot.
+Bot Invite Link: https://discord.com/api/oauth2/authorize?client_id=751186021701517472&permissions=305261873&scope=bot
 
 ## Functions
 ### Server Creation!
