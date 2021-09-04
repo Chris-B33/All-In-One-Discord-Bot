@@ -3,6 +3,7 @@ import logging
 from discord.ext import commands
 from lib.basic import Basic
 from lib.server import Server
+from lib.games import Games
 from lib.sound import Music, TTS
 
 
@@ -34,9 +35,12 @@ if __name__ == "__main__":
         print(art.read())
 
     bot = MyBot(command_prefix="a!")
-    bot.add_cog(Basic())
+
+    bot.add_cog(Basic(bot))
     bot.add_cog(Music(bot))
     bot.add_cog(TTS(bot))
+    bot.add_cog(Games(bot))
     bot.add_cog(Server(bot))
+
     token = open("token.txt", "r").read()
     bot.run(token)
